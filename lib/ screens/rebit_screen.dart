@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:rebit_page/widgets/assetsGraph.dart';
+import 'package:rebit_page/widgets/companyGraph.dart';
+import 'package:rebit_page/widgets/contextWidget.dart';
+import 'package:rebit_page/widgets/listCardWidget.dart';
+import 'package:rebit_page/widgets/percentage.dart';
+import 'package:rebit_page/widgets/rowTabBar.dart';
 
 class RebitMain extends StatefulWidget {
   const RebitMain({Key? key}) : super(key: key);
@@ -9,6 +15,8 @@ class RebitMain extends StatefulWidget {
 }
 
 class _RebitMainState extends State<RebitMain> {
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,127 +26,103 @@ class _RebitMainState extends State<RebitMain> {
           padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "환율",
-                    style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 19.35,
-                        color: Colors.grey.shade400),
-                  ),
-                  Text("뉴스",
-                      style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 19.35,
-                          color: Colors.grey.shade400)),
-                  Text("주식",
-                      style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 19.35,
-                          color: Colors.black)),
-                  Container(
-                    height: 35,
-                    width: 65,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.blue,
-                    ),
-                    child: Center(
-                      child: Text("내 자산",
-                          style: TextStyle(
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 19.35,
-                              color: Colors.white)),
-                    ),
-                  )
-                ],
-              ),
+              RowTabBar(),
               SizedBox(
                 height: 30,
               ),
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.0)),
-                color: Colors.blue,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        '자산비중',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('총 투자 자산',
-                              style: TextStyle(color: Colors.white)),
-                          Text('60,487,204 원',
-                              style: TextStyle(color: Colors.white)),
-                        ],
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('현금', style: TextStyle(color: Colors.white)),
-                          Text('0 원', style: TextStyle(color: Colors.white)),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Image.asset(
-                        'assets/images/graphbar.png',
-                        fit: BoxFit.fill,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [],
-                      )
-                    ],
-                  ),
-                ),
-              )
+              AssetCard_widgets(),
+              SizedBox(
+                height: 30,
+              ),
+              ListCardView(),
+              SizedBox(
+                height: 15,
+              ),
+              Image.asset('assets/images/center.png'),
+              SizedBox(
+                height: 15,
+              ),
+              ContextWidgets(),
+              SizedBox(
+                height: 30,
+              ),
+              PercentWidgets(),
+              SizedBox(
+                height: 30,
+              ),
+              CompanyGraph(),
             ],
           ),
         ),
       ),
+      bottomNavigationBar: bottomNavigationBarWidget(),
     );
   }
 
   AppBar AppBarWidget() {
     return AppBar(
-      leading: Padding(
-        padding: const EdgeInsets.only(left: 25, top: 20),
-        child: Image.asset(
-          'assets/images/title.png',
-          width: 100,
-          height: 30,
+      backgroundColor: Colors.white,
+      title: Image.asset(
+        'assets/images/title.png',
+        height: 30,
+        width: 100,
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 25),
+          child: IconButton(
+            onPressed: () {
+              print("clicked");
+            },
+            // icon: SvgPicture.asset('assets/icons/bell.svg'),
+            icon: Icon(Icons.notifications_sharp),
+          ),
+        )
+      ],
+    );
+  }
+
+  Widget bottomNavigationBarWidget() {
+    return BottomNavigationBar(
+      // 애니메이션 고정. 고정하지 않는다면 아이콘이 커진다.
+      type: BottomNavigationBarType.fixed,
+      onTap: (int index) {
+        print(index);
+        setState(() {
+          selectedIndex = index;
+        });
+      },
+      selectedFontSize: 12,
+      selectedItemColor: Colors.black,
+      selectedLabelStyle: TextStyle(color: Colors.black),
+      items: [
+        bottomNavigationBarItem("home", "홈"),
+        bottomNavigationBarItem("lock", "잠금"),
+        bottomNavigationBarItem("light", "아이디어"),
+        bottomNavigationBarItem("user", "유저"),
+        bottomNavigationBarItem("etc", "etc"),
+      ],
+    );
+  }
+
+  BottomNavigationBarItem bottomNavigationBarItem(
+      String iconName, String label) {
+    return BottomNavigationBarItem(
+      icon: Padding(
+        padding: const EdgeInsets.only(bottom: 3),
+        child: SvgPicture.asset(
+          'assets/icons/${iconName}.svg',
+          width: 22,
         ),
       ),
-      backgroundColor: Colors.white,
-      // actions: [
-      //   IconButton(
-      //     onPressed: () {
-      //       print("clicked");
-      //     },
-      //     icon: SvgPicture.asset('assets/icons/bell.svg'),
-      //   )
-      // ],
+      // activeIcon: Padding(
+      //   padding: const EdgeInsets.only(bottom: 3),
+      //   child: SvgPicture.asset(
+      //     'assets/icons/${iconName}_on.svg',
+      //     width: 22,
+      //   ),
+      // ),
+      label: label,
     );
   }
 }
