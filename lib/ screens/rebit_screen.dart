@@ -111,7 +111,7 @@ class _RebitMainState extends State<RebitMain> {
       icon: Padding(
         padding: const EdgeInsets.only(bottom: 3),
         child: SvgPicture.asset(
-          'assets/icons/${iconName}.svg',
+          'icons/${iconName}.svg',
           width: 22,
         ),
       ),
