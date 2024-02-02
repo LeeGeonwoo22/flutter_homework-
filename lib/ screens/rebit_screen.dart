@@ -74,8 +74,8 @@ class _RebitMainState extends State<RebitMain> {
             onPressed: () {
               print("clicked");
             },
-            // icon: SvgPicture.asset('assets/icons/bell.svg'),
-            icon: Icon(Icons.notifications_sharp),
+            icon: Image.asset('assets/icons/bell.png'),
+            // icon: Icon(Icons.notifications_sharp),
           ),
         )
       ],
@@ -99,7 +99,7 @@ class _RebitMainState extends State<RebitMain> {
         bottomNavigationBarItem("home", "홈"),
         bottomNavigationBarItem("lock", "잠금"),
         bottomNavigationBarItem("light", "아이디어"),
-        bottomNavigationBarItem("user", "유저"),
+        bottomNavigationBarItem("users", "유저"),
         bottomNavigationBarItem("etc", "etc"),
       ],
     );
@@ -110,18 +110,11 @@ class _RebitMainState extends State<RebitMain> {
     return BottomNavigationBarItem(
       icon: Padding(
         padding: const EdgeInsets.only(bottom: 3),
-        child: SvgPicture.asset(
-          'icons/${iconName}.svg',
+        child: Image.asset(
+          'icons/${iconName}.png',
           width: 22,
         ),
       ),
-      // activeIcon: Padding(
-      //   padding: const EdgeInsets.only(bottom: 3),
-      //   child: SvgPicture.asset(
-      //     'assets/icons/${iconName}_on.svg',
-      //     width: 22,
-      //   ),
-      // ),
       label: label,
     );
   }
