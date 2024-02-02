@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rebit_page/widgets/assetsGraph.dart';
 import 'package:rebit_page/widgets/companyGraph.dart';
 import 'package:rebit_page/widgets/contextWidget.dart';
@@ -111,7 +111,7 @@ class _RebitMainState extends State<RebitMain> {
       icon: Padding(
         padding: const EdgeInsets.only(bottom: 3),
         child: Image.asset(
-          'icons/${iconName}.png',
+          'assets/icons/${iconName}.png',
           width: 22,
         ),
       ),
