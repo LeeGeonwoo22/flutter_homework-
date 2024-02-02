@@ -31,8 +31,8 @@ class RowTabBar extends StatelessWidget {
                 fontSize: 19.35,
                 color: Colors.black)),
         Container(
-          height: 35,
-          width: 65,
+          height: 38,
+          width: 68,
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(20),
@@ -42,7 +42,7 @@ class RowTabBar extends StatelessWidget {
             child: Text("내 자산",
                 style: TextStyle(
                     fontFamily: 'Inter',
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w500,
                     fontSize: 19.35,
                     color: Colors.white)),
           ),

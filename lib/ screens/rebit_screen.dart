@@ -28,11 +28,11 @@ class _RebitMainState extends State<RebitMain> {
             children: [
               RowTabBar(),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
               AssetCard_widgets(),
               SizedBox(
-                height: 30,
+                height: 15,
               ),
               ListCardView(),
               SizedBox(
@@ -96,11 +96,11 @@ class _RebitMainState extends State<RebitMain> {
       selectedItemColor: Colors.black,
       selectedLabelStyle: TextStyle(color: Colors.black),
       items: [
-        bottomNavigationBarItem("home", "홈"),
-        bottomNavigationBarItem("lock", "잠금"),
-        bottomNavigationBarItem("light", "아이디어"),
-        bottomNavigationBarItem("users", "유저"),
-        bottomNavigationBarItem("etc", "etc"),
+        bottomNavigationBarItem("home", ""),
+        bottomNavigationBarItem("lock", ""),
+        bottomNavigationBarItem("light", ""),
+        bottomNavigationBarItem("users", ""),
+        bottomNavigationBarItem("etc", ""),
       ],
     );
   }
@@ -108,14 +108,13 @@ class _RebitMainState extends State<RebitMain> {
   BottomNavigationBarItem bottomNavigationBarItem(
       String iconName, String label) {
     return BottomNavigationBarItem(
-      icon: Padding(
-        padding: const EdgeInsets.only(bottom: 3),
-        child: Image.asset(
-          'assets/icons/${iconName}.png',
-          width: 22,
+        icon: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 6),
+          child: Image.asset(
+            'assets/icons/${iconName}.png',
+            width: 22,
+          ),
         ),
-      ),
-      label: label,
-    );
+        label: label);
   }
 }

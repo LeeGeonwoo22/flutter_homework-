@@ -8,132 +8,168 @@ class ListCardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
+      height: 100,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
           InkWell(
             onTap: () {},
-            child: Container(
-              width: 80,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: Colors.white),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text('국내 주식',
+            child: Card(
+              elevation: 1,
+              color: Colors.white,
+              surfaceTintColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              child: SizedBox(
+                height: 80,
+                width: 71,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text('국내 주식',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14)),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      '25%',
                       style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14)),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    '25%',
-                    style: TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14),
-                  )
-                ],
+                          color: Colors.red,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    )
+                  ],
+                ),
               ),
             ),
           ),
           SizedBox(
-            width: 20,
+            width: 15,
           ),
           InkWell(
             onTap: () {},
-            child: Container(
-              width: 80,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: Colors.white),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text('해외 주식',
+            child: Card(
+              elevation: 1,
+              color: Colors.white,
+              surfaceTintColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              child: SizedBox(
+                height: 80,
+                width: 71,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text('해외 주식',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14)),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      '25%',
                       style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14)),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    '25%',
-                    style: TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14),
-                  )
-                ],
+                          color: Colors.red,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    )
+                  ],
+                ),
               ),
             ),
           ),
           SizedBox(
-            width: 20,
+            width: 15,
           ),
           InkWell(
             onTap: () {},
-            child: Container(
-              width: 80,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: Colors.white),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text('가상 화폐',
+            child: Card(
+              elevation: 1,
+              color: Colors.white,
+              surfaceTintColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              child: SizedBox(
+                height: 80,
+                width: 71,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text('가상 화폐',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14)),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      '-25%',
                       style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14)),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    '-25%',
-                    style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14),
-                  )
-                ],
+                          color: Colors.blue,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    )
+                  ],
+                ),
               ),
             ),
           ),
           SizedBox(
-            width: 20,
+            width: 15,
           ),
           InkWell(
             onTap: () {},
-            child: Container(
-              width: 80,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: Colors.white),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text('그외',
+            child: Card(
+              elevation: 1,
+              color: Colors.white,
+              surfaceTintColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              child: SizedBox(
+                height: 80,
+                width: 71,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(' 그외 ',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14)),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      '25%',
                       style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14)),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    '25%',
-                    style: TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14),
-                  )
-                ],
+                          color: Colors.red,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    )
+                  ],
+                ),
               ),
             ),
           ),

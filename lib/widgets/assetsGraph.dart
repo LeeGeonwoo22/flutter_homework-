@@ -14,7 +14,6 @@ class AssetCard_widgets extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
               '자산비중',
@@ -47,44 +46,44 @@ class AssetCard_widgets extends StatelessWidget {
               height: 10,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
                   height: 10,
-                  width: 10,
+                  width: 14,
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     color: Color(0xFF00CC98),
                   ),
                 ),
                 Text('해외주식', style: TextStyle(color: Colors.white)),
                 Container(
                   height: 10,
-                  width: 10,
+                  width: 14,
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     color: Color(0xFFFF9500),
                   ),
                 ),
                 Text('국내주식', style: TextStyle(color: Colors.white)),
                 Container(
                   height: 10,
-                  width: 10,
+                  width: 14,
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     color: Color(0xFFF9464B),
                   ),
                 ),
                 Text('가상화폐', style: TextStyle(color: Colors.white)),
                 Container(
                   height: 10,
-                  width: 10,
+                  width: 14,
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     color: Color(0xFFFFFFFF),
                   ),
                 ),
